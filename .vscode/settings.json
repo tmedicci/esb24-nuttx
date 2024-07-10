@@ -1,0 +1,4 @@
+"markdown.marp.themes": [
+    "https://dl.espressif.com/dl/marp-theme/espressif.css",
+    "https://dl.espressif.com/dl/marp-theme/espressif_training.css"
+]
