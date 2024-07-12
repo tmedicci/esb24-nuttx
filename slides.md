@@ -569,15 +569,21 @@ NuttX possui suporte a ESP32, ESP32-S2, ESP32-S3, ESP32-C3, ESP32-C6 e ESP32-H2
 
 ## Dúvidas, Perguntas e Sugestões :memo:
 
-
----
+Esta apresentação é uma introdução ao NuttX com o ESP32. Muito conteúdo ficou de fora, eu sei, mas espero que tenham gostado!
 
 ### Obrigado!
+
+
+#### Tiago Medicci
 
 ![w:25 left](./images/github-mark.png) - [https://github.com/tmedicci](https://github.com/tmedicci)
 ![w:25 left](./images/github-mark.png) - [https://github.com/fdcavalcanti](https://github.com/fdcavalcanti)
 ![w:25 left](./images/linkedin-mark.png) - [https://www.linkedin.com/in/tmedicci/](https://www.linkedin.com/in/tmedicci/)
-![w:25 left](./images/linkedin-mark.png) - [https://www.linkedin.com/in/fdcavalcanti/](https://www.linkedin.com/in/fdcavalcanti/)
+
+#### Filipe Cavalcanti
+
+![w:25 left](./images/github-mark.png) - [https://github.com/fdcavalcanti](https://github.com/fdcavalcanti)
+![w:25 left](./images/linkedin-mark.png) - [https://www.linkedin.com/in/fdcavalcanti](https://www.linkedin.com/in/fdcavalcanti)
 
 ---
 
