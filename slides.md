@@ -491,6 +491,37 @@ Existe (desde 1996) um protocolo de rede chamado *RTP* (Real-Time Protocol) que 
 
 ---
 
+###### Real-Time Protocol (RTP) :clipboard:
+
+<iframe src="images/rtp.drawio.html" height="600px" width="100%" frameBorder="0"></iframe>
+
+---
+
+###### Real-Time Protocol (RTP) - Transmissor
+
+- Computador com sistema operacional *Linux*, com o *PulseAudio* (gerenciador de áudio) instalado.
+  - Módulo *RTP Send*: aparece como uma placa de som;
+- Envio de RTP no formato PCM (*Pulse-code modulation*, ou seja, sem qualquer compressão);
+  - 2 canais (estéreo);
+  - 16 bits;
+  - Taxa de amostragem: 44,1KHz;
+  - **Qualidade de CD!**
+
+---
+
+###### Real-Time Protocol (RTP) - Receptor
+
+*RTP Tools* é composto por algumas aplicações, entre elas o `rtpdump`, que permite receber pacotes via RTP.
+
+O conteúdo (*payload*) dos pacotes é, justamente, os pacotes de áudio PCM (não comprimidos), que pode ser encaminhado ao codec de áudio via periférico I2S.
+
+```shell
+nsh> rtpdump -h
+usage: rtpdump [-F hex|ascii|rtcp|short|payload|dump|header] [-f infile] [-o outfile] [-t minutes] [-x bytes] [address]/port > file
+```
+
+---
+
 ###### Quer saber mais? :nerd_face:
 
 Artigo no *embarcados.com.br* :books:
