@@ -21,7 +21,7 @@ theme: espressif
 
 ## Quem somos?
 
-### Tiago Medicci 
+### Tiago Medicci
 Engenheiro Eletricista e Mestre em Eng. Eletrônica pela Unicamp. Amante de eletrônica e áudio. Maker. Engenheiro de Software na Espressif.
 
 ### Filipe Cavalcanti:
@@ -288,7 +288,7 @@ make -j distclean
 ./tools/configure.sh esp32s3-devkit:espressif_summit
 
 # Selecionar o examplo de Hello World
-make menuconfig 
+make menuconfig
 
 # Compilar e gravar o firmware
 make flash ESPTOOL_PORT=/dev/ttyUSB0 -j$(nproc)
@@ -305,20 +305,20 @@ minicom
 nsh> help
 help usage:  help [-v] [<cmd>]
 
-    .           cp          expr        ln          ps          true        
-    [           cmp         false       ls          pwd         truncate    
-    ?           dirname     fdinfo      mkdir       readlink    uname       
-    alias       dd          free        mkfifo      rm          umount      
-    unalias     df          help        mkrd        rmdir       unset       
-    arp         dmesg       hexdump     mount       set         uptime      
-    basename    echo        ifconfig    mv          sleep       usleep      
-    break       env         ifdown      nslookup    source      wget        
-    cat         exec        ifup        pidof       test        xd          
-    cd          exit        kill        printf      time        
+    .           cp          expr        ln          ps          true
+    [           cmp         false       ls          pwd         truncate
+    ?           dirname     fdinfo      mkdir       readlink    uname
+    alias       dd          free        mkfifo      rm          umount
+    unalias     df          help        mkrd        rmdir       unset
+    arp         dmesg       hexdump     mount       set         uptime
+    basename    echo        ifconfig    mv          sleep       usleep
+    break       env         ifdown      nslookup    source      wget
+    cat         exec        ifup        pidof       test        xd
+    cd          exit        kill        printf      time
 
 Builtin Apps:
-    hello       nsh         ping        renew       sh          wapi        
-    iwasm       nxplayer    rand        rtpdump     stat        wget        
+    hello       nsh         ping        renew       sh          wapi
+    iwasm       nxplayer    rand        rtpdump     stat        wget
 nsh> hello
 Hello, World!!
 nsh>
@@ -326,7 +326,7 @@ nsh>
 
 ---
 
-#### Ainda o *Hello World* - ELF Loader 
+#### Ainda o *Hello World* - ELF Loader
 
 O NuttX permite que aplicações sejam carregadas dinamicamente. Ou seja, o NuttX permite:
 1) Criar um firmware base que carregue as aplicações dinamicamente (de uma memória externa, por exemplo)
@@ -343,11 +343,11 @@ Um arquivo `.tar.gz` será gerado no diretório raiz. Este compilado contém os 
 
 <style scoped>
 pre {
-  font-size: 40%;
+  font-size: 60%;
 }
 </style>
 
-#### Ainda o *Hello World* - ELF Loader 
+#### Ainda o *Hello World* - ELF Loader
 
 O exemplo a seguir contém o programa *Hello World* e um `Makefile` com o seguinte conteúdo:
 
@@ -355,7 +355,6 @@ O exemplo a seguir contém o programa *Hello World* e um `Makefile` com o seguin
 include nuttx-export-10.4.0/scripts/Make.defs
 
 ARCHINCLUDES += -isystem nuttx-export-10.4.0/include
-
 CFLAGS = $(ARCHCFLAGS) $(ARCHWARNINGS) $(ARCHOPTIMIZATION) $(ARCHCPUFLAGS) $(ARCHINCLUDES) $(ARCHDEFINES) $(EXTRADEFINES)
 CELFFLAGS = $(CFLAGS) -mtext-section-literals
 
@@ -364,7 +363,6 @@ OBJEXT ?= .o
 # This is the generated ELF program
 
 BIN = hello
-
 SRCS = hello.c
 OBJS = $(SRCS:.c=$(OBJEXT))
 
@@ -378,10 +376,6 @@ $(OBJS): %$(OBJEXT): %.c
 
 $(BIN): $(OBJS)
 	$(LD) $(LDFLAGS) $(LDELFFLAGS) -o $@ $^
-
-clean:
-	rm -f $(BIN)
-	rm -f *.o
 ```
 
 ---
@@ -392,7 +386,7 @@ pre {
 }
 </style>
 
-#### Ainda o *Hello World* - ELF Loader 
+#### Ainda o *Hello World* - ELF Loader
 
 O programa `Hello World` compilado externamente pode ser executado no firmware com o NuttX. Além de poder ser transferido para uma mídia externa (cartão SD, por exemplo), ele pode ser baixado no NuttX:
 
@@ -411,7 +405,7 @@ nsh> ls /data/
  wapi.conf
 nsh> /data/hello2
 Hello, World!!
-nsh> 
+nsh>
 ```
 
 ---
@@ -438,7 +432,7 @@ CC=("${WASI_SDK_PATH}/bin/clang" "--sysroot=${WASI_SDK_PATH}/share/wasi-sysroot"
 
 # Executando o programa no computador
 
-$ iwasm hello.wasm 
+$ iwasm hello.wasm
 Hello, World!!
 ```
 
@@ -460,7 +454,7 @@ Hello, World!!
 - On-demand paging;
 - Suporte a diversos Sistema de Arquivos (`NXFFS`, `SMART`, `SPIFFS`, `LittleFS`, `ROMFS`, `TMPFS`, etc);
 - USB Host e USB Device;
-- Subsistema de gráficos e áudio; 
+- Subsistema de gráficos e áudio;
 
 
 ---
