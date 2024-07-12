@@ -25,7 +25,7 @@ theme: espressif
 Engenheiro Eletricista e Mestre em Eng. Eletrônica pela Unicamp. Amante de eletrônica e áudio. Maker. Engenheiro de Software na Espressif.
 
 ### Filipe Cavalcanti:
-Engenheiro Eletricista e Mestre em Eng. Elétrica pela UFPB. Engenheiro de Software na Espressif.
+Engenheiro Eletricista e Mestre em Eng. Elétrica pela Universidade Federal da Paraíba. Engenheiro de Software na Espressif. Aspirante a guitarrista.
 
 ---
 
@@ -64,9 +64,7 @@ table {
 }
 </style>
 
-<!-- Definir melhor o Pulse -->
-
-| Operating system | First commit | Governance    | License                    | Contributors | Pulse (jun10/2024) |
+| Operating system | First commit | Governance    | License                    | Contributors | Pulse*(jun10/2024) |
 |------------------|--------------|---------------|----------------------------|--------------|--------------------|
 | Zephyr           | 2014         | community     | Apache 2.0                 | 100+         | 942                |
 | **NuttX**        | **2007**     | **community** | **Apache 2.0**             | **100+**     | **135**            |
@@ -79,6 +77,14 @@ table {
 | Contiki-NG       | 2016         | community     | BSD-3 Clause               | 100+         | 4                  |
 | CMSIS-5          | 2016         | ARM           | Apache 2.0                 | 100+         | 0                  |
 | Azure-RTOS       | 2020         | Microsoft     | Microsoft Software License | 10+          | archived           |
+
+<style scoped>
+section {
+  font-size: 20px;
+}
+</style>
+
+***Pulse** é uma métrica que avalia atividades no repositório, como pull-requests e issues durante um certo tempo.
 
 ---
 
@@ -322,14 +328,16 @@ nsh>
 
 #### Ainda o *Hello World* - ELF Loader 
 
-O NuttX permite que aplicações sejam carregadas dinamicamente. Ou seja, o NuttX permite 1) criar um firmware base que carregue as aplicações dinamicamente (de uma memória externa, por exemplo) ou 2) atualizar uma aplicação sem ter que atulizar o fimware:
+O NuttX permite que aplicações sejam carregadas dinamicamente. Ou seja, o NuttX permite:
+1) Criar um firmware base que carregue as aplicações dinamicamente (de uma memória externa, por exemplo)
+2) Atualizar uma aplicação sem atualizar o firmware por inteiro
 
 ```shell
 # Após compilar o NuttX, exporte as configurações e biblioteca utilizadas
 make export
 ```
 
-Um arquivo `.tar.gz` será gerado no diretótio raiz. Este compilado contém os arquivos necessários para compilar uma aplicação a ser carregada dinamicamente.
+Um arquivo `.tar.gz` será gerado no diretório raiz. Este compilado contém os arquivos necessários para compilar uma aplicação a ser carregada dinamicamente.
 
 ---
 
@@ -447,7 +455,7 @@ Hello, World!!
 ## (Um pouco mais de) Por que o NuttX?
 
 - Loadable kernel modules; lightweight, embedded shared libraries;
-- Configurações de Memória: (1) Flat build, (2) Protected build com MPU, and (3) Kernel build com MMU.
+- Configurações de Memória: (1) Flat build, (2) Protected build com MPU, e (3) Kernel build com MMU.
   - *Flat* RTOS ou compilado separadamente, como um kernel seguro monolítico com uma interface de chamadas de sistema (system calls);
 - On-demand paging;
 - Suporte a diversos Sistema de Arquivos (`NXFFS`, `SMART`, `SPIFFS`, `LittleFS`, `ROMFS`, `TMPFS`, etc);
@@ -502,28 +510,31 @@ Artigo no *embarcados.com.br* :books:
 
 ## Espressif ESP32-S3
 
-- Primeira versão lançada oficialmente em 6 de setembro de 2016;
-- Sucessor do ESP8266 (*"IoT Game Changer"*);
-- Focado em conectividade!
-  - Wi-Fi e Bluetooth;
+- Low-power SOC
+- Dual-core Xtensa 32-bit
+- Focado em conectividade
+  - Wi-Fi e Bluetooth
 
-![bg left:50% height: 80%](./images/esp32_block_diagram.png)
-
----
-
-### ESP32 e o NuttX :computer:
-
-- Primeiro commit em out/2016 (sim, um mês depois do lançamento!) pelo próprio Gregory Nutt (criador do NuttX);
-- Em 29 de outubro de 2021 a Espressif anuncia oficialmente o suporte aos OSes NuttX e Zephyr (além, claro, do ESP-IDF, que continua sendo o OS oficial da Espressif para o ESP32);
-- ESP32, ESP32-S2, ESP32-S3, ESP32-C3, ESP32-C6 e ESP32-H2 são suportados no NuttX hoje (23/01/2024);
+![bg left:50% height: 95%](./images/esp32s3_block_diagram.png)
 
 ---
 
-### ESP32 e o NuttX :computer:
+### Espressif e o NuttX :computer:
 
-[Documentação do ESP32 no NuttX](https://nuttx.apache.org/docs/latest/platforms/xtensa/esp32/index.html):
+- Outubro, 2016
+Primeiro commit pelo próprio Gregory Nutt (criador do NuttX), um mês após o lançamento
+- Outubro, 2021
+ Espressif anuncia oficialmente suporte aos OSes NuttX e Zephyr (além do ESP-IDF, que continua sendo o OS oficial da Espressif para seus SOCs)
+- Julho, 2024
+NuttX possui suporte a ESP32, ESP32-S2, ESP32-S3, ESP32-C3, ESP32-C6 e ESP32-H2
 
-<iframe src="https://nuttx.apache.org/docs/latest/platforms/xtensa/esp32/index.html" height="600px" width="100%" frameBorder="0"></iframe>
+---
+
+### ESP32-S3 e o NuttX :computer:
+
+[Documentação do ESP32-S3 no NuttX](https://nuttx.apache.org/docs/latest/platforms/xtensa/esp32s3/index.html):
+
+<iframe src="https://nuttx.apache.org/docs/latest/platforms/xtensa/esp32s3/index.html" height="600px" width="100%" frameBorder="0"></iframe>
 
 ---
 
@@ -533,12 +544,15 @@ Artigo no *embarcados.com.br* :books:
 
 ## Dúvidas, Perguntas e Sugestões :memo:
 
-Este workshop é uma introdução ao NuttX com o ESP32. Muito conteúdo ficou de fora, eu sei, mas espero que tenham gostado!
+
+---
 
 ### Obrigado!
 
 ![w:25 left](./images/github-mark.png) - [https://github.com/tmedicci](https://github.com/tmedicci)
+![w:25 left](./images/github-mark.png) - [https://github.com/fdcavalcanti](https://github.com/fdcavalcanti)
 ![w:25 left](./images/linkedin-mark.png) - [https://www.linkedin.com/in/tmedicci/](https://www.linkedin.com/in/tmedicci/)
+![w:25 left](./images/linkedin-mark.png) - [https://www.linkedin.com/in/fdcavalcanti/](https://www.linkedin.com/in/fdcavalcanti/)
 
 ---
 
