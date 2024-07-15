@@ -24,7 +24,7 @@ theme: espressif
 ### Tiago Medicci
 Engenheiro Eletricista e Mestre em Eng. Eletrônica pela Unicamp. Amante de eletrônica e áudio. Maker. Engenheiro de Software na Espressif.
 
-### Filipe Cavalcanti:
+### Filipe Cavalcanti
 Engenheiro Eletricista e Mestre em Eng. Elétrica pela Universidade Federal da Paraíba. Engenheiro de Software na Espressif. Aspirante a guitarrista.
 
 ---
@@ -43,18 +43,18 @@ O NuttX é um sistema operacional em tempo real (RTOS) que visa fornecer uma pla
 
 - Bare-metal;
 - Sistemas operacionais:
-  - Sistemas operaticionais de tempo real (RTOS);
+  - Sistemas operacionais de tempo real (RTOS);
   - Linux Embarcado;
 
 ---
 
-### RTOS (Real Time Operating System)
+### RTOS (Real-Time Operating System)
 
 #### Wikipedia (em tradução livre):
 
 > Sistemas operacionais em tempo real são orientados a eventos e preemptivos, o que significa que o sistema operacional pode monitorar a prioridade relevante de tarefas concorrentes e fazer alterações na prioridade da tarefa. Sistemas orientados a eventos alternam entre tarefas com base em suas prioridades, enquanto sistemas de compartilhamento de tempo alternam a tarefa com base em interrupções de relógio.
 
-https://en.wikipedia.org/wiki/Real-time_operating_system, acesso em 08/01/2024.
+[Wikipedia: Real-time operating system](https://en.wikipedia.org/wiki/Real-time_operating_system), acesso em 08/01/2024.
 
 ---
 
@@ -227,7 +227,7 @@ int main() {
 
 ### POSIX?
 
-De novo, da wikipedia :memo::
+De novo, da *Wikipedia* :memo::
 
 > POSIX (um acrônimo para: Portable Operating System Interface, que pode ser traduzido como Interface Portável entre Sistemas Operativos) é uma família de normas definidas pelo IEEE para a manutenção de compatibilidade entre sistemas operacionais e designada formalmente por IEEE 1003. POSIX define a interface de programação de aplicações (API), juntamente com shells de linha e comando e interfaces utilitárias, para compatibilidade de software com variantes de Unix e outros sistemas operacionais.
 
@@ -287,7 +287,7 @@ make -j distclean
 # Configurar o exemplo base
 ./tools/configure.sh esp32s3-devkit:espressif_summit
 
-# Selecionar o examplo de Hello World
+# Selecionar o exemplo de Hello World
 make menuconfig
 
 # Compilar e gravar o firmware
@@ -456,6 +456,16 @@ Hello, World!!
 - USB Host e USB Device;
 - Subsistema de gráficos e áudio;
 
+---
+
+## Espressif e o NuttX :computer:
+
+- **Outubro, 2016**
+Primeiro commit pelo próprio Gregory Nutt (criador do NuttX), um mês após o lançamento do ESP32;
+- **Outubro, 2021**
+ Espressif anuncia oficialmente suporte aos OSes NuttX e Zephyr (além do ESP-IDF, que continua sendo o OS oficial da Espressif para seus SOCs);
+- **Julho, 2024**
+NuttX possui suporte a ESP32, ESP32-S2, ESP32-S3, ESP32-C3, ESP32-C6 e ESP32-H2;
 
 ---
 
@@ -491,6 +501,17 @@ Existe (desde 1996) um protocolo de rede chamado *RTP* (Real-Time Protocol) que 
 
 ---
 
+###### RTP Tools no NuttX? Como? :nerd_face:
+
+Artigo no *embarcados.com.br* :books:
+
+[***NuttX: Criando (ou Copiando!) uma Aplicação para o NuttX***](https://embarcados.com.br/nuttx-criando-ou-copiando-uma-aplicacao-para-o-nuttx/)
+
+> Da série de artigos em português no *embarcados.com.br*:
+[*Primeiros Passos com o ESP32 e NuttX*](https://embarcados.com.br/serie/primeiros-passos-com-o-esp32-e-o-nuttx/)
+
+---
+
 ###### Real-Time Protocol (RTP) :clipboard:
 
 <iframe src="images/rtp.drawio.html" height="600px" width="100%" frameBorder="0"></iframe>
@@ -513,7 +534,7 @@ Existe (desde 1996) um protocolo de rede chamado *RTP* (Real-Time Protocol) que 
 
 *RTP Tools* é composto por algumas aplicações, entre elas o `rtpdump`, que permite receber pacotes via RTP.
 
-O conteúdo (*payload*) dos pacotes é, justamente, os pacotes de áudio PCM (não comprimidos), que pode ser encaminhado ao codec de áudio via periférico I2S.
+O conteúdo (*payload*) dos pacotes é, justamente, os pacotes de áudio PCM (não comprimidos), que pode ser encaminhado ao codec de áudio via periférico I2S e, então, o sinal analógico pode ser reproduzido em uma caixa de som.
 
 ```shell
 nsh> rtpdump -h
@@ -522,36 +543,33 @@ usage: rtpdump [-F hex|ascii|rtcp|short|payload|dump|header] [-f infile] [-o out
 
 ---
 
-###### Quer saber mais? :nerd_face:
-
-Artigo no *embarcados.com.br* :books:
-
-[***NuttX: Criando (ou Copiando!) uma Aplicação para o NuttX***](https://embarcados.com.br/nuttx-criando-ou-copiando-uma-aplicacao-para-o-nuttx/)
-
-> Da série de artigos em português no *embarcados.com.br*:
-[*Primeiros Passos com o ESP32 e NuttX*](https://embarcados.com.br/serie/primeiros-passos-com-o-esp32-e-o-nuttx/)
+## Mão na Massa! :construction_worker:
 
 ---
 
 ## Espressif ESP32-S3
-
-- Low-power SOC
-- Dual-core Xtensa 32-bit
-- Focado em conectividade
-  - Wi-Fi e Bluetooth
+- Wi-Fi (2.4 GHz);
+- Bluetooth Low Energy;
+- Dual high performance Xtensa® 32-bit LX7 CPU cores;
+- Ultra Low Power co-processor;
+- Múltiplos Periféricos;
+- Interface USB OTG;
+- Controlador USB Serial/JTAG;
 
 ![bg left:50% height: 95%](./images/esp32s3_block_diagram.png)
 
 ---
 
-### Espressif e o NuttX :computer:
+## Espressif ESP32-S3-Korvo-2
 
-- Outubro, 2016
-Primeiro commit pelo próprio Gregory Nutt (criador do NuttX), um mês após o lançamento
-- Outubro, 2021
- Espressif anuncia oficialmente suporte aos OSes NuttX e Zephyr (além do ESP-IDF, que continua sendo o OS oficial da Espressif para seus SOCs)
-- Julho, 2024
-NuttX possui suporte a ESP32, ESP32-S2, ESP32-S3, ESP32-C3, ESP32-C6 e ESP32-H2
+- Codec de Áudio ES8311:
+  - Interface de controle via I2C;
+  - Interface de dados via I2S;
+- Amplificador de Áudio integrado;
+- Array de Microfones e ADC dedicado;
+- Cartão SD;
+
+![bg left:50% height: 100%](./images/esp32-s3-korvo-2-v3.0.png)
 
 ---
 
@@ -563,13 +581,84 @@ NuttX possui suporte a ESP32, ESP32-S2, ESP32-S3, ESP32-C3, ESP32-C6 e ESP32-H2
 
 ---
 
-## Mão na Massa! :construction_worker:
+<style scoped>
+pre {
+  font-size: 60%;
+}
+</style>
+
+###### Real-Time Protocol (RTP) - Receptor
+
+Conectando na rede Wi-Fi:
+
+```shell
+nsh> wapi psk wlan0 tijolo22 3
+nsh> wapi essid wlan0 NuttX 1
+nsh> renew wlan0
+nsh> ifconfig
+wlan0   Link encap:Ethernet HWaddr 34:85:18:42:f9:e4 at RUNNING mtu 1504
+        inet addr:192.168.1.210 DRaddr:192.168.1.1 Mask:255.255.255.0
+
+             IPv4   TCP   UDP  ICMP
+Received     0002  0000  0002  0000
+Dropped      0000  0000  0000  0000
+  IPv4        VHL: 0000   Frg: 0000
+  Checksum   0000  0000  0000  ----
+  TCP         ACK: 0000   SYN: 0000
+              RST: 0000  0000
+  Type       0000  ----  ----  0000
+Sent         0002  0000  0002  0000
+  Rexmit     ----  0000  ----  ----
+```
+
+---
+
+<style scoped>
+pre {
+  font-size: 60%;
+}
+</style>
+
+###### Real-Time Protocol (RTP) - Receptor
+
+Criando um arquivo *FIFO* para receber os pacotes RTP:
+
+```shell
+nsh> mkfifo temp
+```
+
+Executando o `rtpdump` (em background) para receber os pacotes na porta `46998` e salvar no arquivo `temp`:
+
+```shell
+nsh> rtpdump -F payload -o temp /46998 &
+rtpdump [15:100]
+```
+
+---
+
+<style scoped>
+pre {
+  font-size: 60%;
+}
+</style>
+
+###### Real-Time Protocol (RTP) - Receptor
+
+Neste momento, os pacotes de áudio PCM (recebidos via RTP) estão sendo escritos no arquivo *FIFO* `temp`. Vamos, então, reproduzir (ler), deste arquivo:
+
+```shell
+nsh> nxplayer
+NxPlayer version 1.05
+h for commands, q to exit
+
+nxplayer> playraw temp 2 16 44100
+```
+
+O comando `playraw` do *NxPlayer* encaminha os dados do arquivo diretamente para o codec de áudio. Os argumentos `2`, `16` e `44100` representam, respectivamente, a quantidade de canais (2 canais, estéreo), a quantidade de bits/sample (16) e a taxa de amostragem (44100 Hz). Estes parâmetros são, exatamente, os encontrados em um CD!
 
 ---
 
 ## Dúvidas, Perguntas e Sugestões :memo:
-
-Esta apresentação é uma introdução ao NuttX com o ESP32. Muito conteúdo ficou de fora, eu sei, mas espero que tenham gostado!
 
 ### Obrigado!
 
