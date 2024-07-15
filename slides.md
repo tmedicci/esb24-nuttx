@@ -280,6 +280,8 @@ int main(int argc, FAR char *argv[])
 
 #### Primeiros Passos com o *Hello World*
 
+![bg right](https://fakeimg.pl/800x600/ffffff/fff/)
+
 ```shell
 # Limpa o diretório de trabalho
 make -j distclean
@@ -298,6 +300,8 @@ minicom
 ```
 
 ---
+
+![bg right](https://fakeimg.pl/800x600/ffffff/fff/)
 
 #### Primeiros Passos com o *Hello World*
 
@@ -337,6 +341,10 @@ nsh>
 O NuttX permite que aplicações sejam carregadas dinamicamente. Ou seja, o NuttX permite:
 1) Criar um firmware base que carregue as aplicações dinamicamente (de uma memória externa, por exemplo)
 2) Atualizar uma aplicação sem atualizar o firmware por inteiro
+
+---
+
+#### Ainda o *Hello World* - ELF Loader
 
 ```shell
 # Após compilar o NuttX, exporte as configurações e biblioteca utilizadas
@@ -386,17 +394,11 @@ $(BIN): $(OBJS)
 
 ---
 
-<style scoped>
-pre {
-  font-size: 60%;
-}
-</style>
+![bg right](https://fakeimg.pl/800x600/ffffff/fff/)
 
 #### Ainda o *Hello World* - ELF Loader
 
-O programa `Hello World` compilado externamente pode ser executado no NuttX, via:
-- Mídia externa (cartão SD, por exemplo)
-- Download
+Executando o programa `Hello World` compilado externamente:
 
 ```shell
 nsh> ls /data
@@ -429,9 +431,11 @@ Ou seja, permite que um programa seja compilado para o formato WebAssembly e, en
 
 ---
 
+![bg right](https://fakeimg.pl/800x600/ffffff/fff/)
+
 #### Ainda o *Hello World* - WebAssembly
 
-##### Compilando o programa *Hello World* para `Wasm`
+###### Compilando o programa *Hello World* para `Wasm`:
 
 ```bash
 export WASI_SDK_PATH=/home/tiago/Downloads/wasi-sdk-22.0-linux/wasi-sdk-22.0
@@ -444,7 +448,7 @@ $ iwasm hello.wasm
 Hello, World!!
 ```
 
-##### Baixando e executando o programa no NuttX
+###### Baixando e executando o programa no NuttX:
 
 ```shell
 nsh> wget /data/hello.wasm http://192.168.1.155:8000/hello.wasm
@@ -592,11 +596,7 @@ usage: rtpdump [-F hex|ascii|rtcp|short|payload|dump|header] [-f infile] [-o out
 
 ---
 
-<style scoped>
-pre {
-  font-size: 60%;
-}
-</style>
+![bg right](https://fakeimg.pl/800x600/ffffff/fff/)
 
 ###### Real-Time Protocol (RTP) - Receptor
 
@@ -624,11 +624,7 @@ Sent         0002  0000  0002  0000
 
 ---
 
-<style scoped>
-pre {
-  font-size: 60%;
-}
-</style>
+![bg right](https://fakeimg.pl/800x600/ffffff/fff/)
 
 ###### Real-Time Protocol (RTP) - Receptor
 
@@ -647,11 +643,7 @@ rtpdump [15:100]
 
 ---
 
-<style scoped>
-pre {
-  font-size: 60%;
-}
-</style>
+![bg right](https://fakeimg.pl/800x600/ffffff/fff/)
 
 ###### Real-Time Protocol (RTP) - Receptor
 
@@ -665,6 +657,12 @@ h for commands, q to exit
 
 nxplayer> playraw temp 2 16 44100
 ```
+
+---
+
+![bg right](https://fakeimg.pl/800x600/ffffff/fff/)
+
+###### Real-Time Protocol (RTP) - Receptor
 
 O comando `playraw` do *NxPlayer* encaminha os dados do arquivo diretamente para o codec de áudio. 
 <!-- Os argumentos `2`, `16` e `44100` representam, respectivamente, a quantidade de canais (2 canais, estéreo), a quantidade de bits/sample (16) e a taxa de amostragem (44100 Hz). Estes parâmetros são, exatamente, os encontrados em um CD! -->
