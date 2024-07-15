@@ -398,6 +398,34 @@ $(BIN): $(OBJS)
 
 #### Ainda o *Hello World* - ELF Loader
 
+Conectando na rede Wi-Fi
+
+```shell
+nsh> wapi psk wlan0 tijolo22 3
+nsh> wapi essid wlan0 NuttX 1
+nsh> renew wlan0
+nsh> ifconfig
+wlan0   Link encap:Ethernet HWaddr 34:85:18:42:f9:e4 at RUNNING mtu 1504
+        inet addr:192.168.1.210 DRaddr:192.168.1.1 Mask:255.255.255.0
+
+             IPv4   TCP   UDP  ICMP
+Received     0002  0000  0002  0000
+Dropped      0000  0000  0000  0000
+  IPv4        VHL: 0000   Frg: 0000
+  Checksum   0000  0000  0000  ----
+  TCP         ACK: 0000   SYN: 0000
+              RST: 0000  0000
+  Type       0000  ----  ----  0000
+Sent         0002  0000  0002  0000
+  Rexmit     ----  0000  ----  ----
+```
+
+---
+
+![bg right](https://fakeimg.pl/800x600/ffffff/fff/)
+
+#### Ainda o *Hello World* - ELF Loader
+
 Executando o programa `Hello World` compilado externamente:
 
 ```shell
@@ -600,34 +628,6 @@ usage: rtpdump [-F hex|ascii|rtcp|short|payload|dump|header] [-f infile] [-o out
 
 ###### Real-Time Protocol (RTP) - Receptor
 
-Conectando na rede Wi-Fi
-
-```shell
-nsh> wapi psk wlan0 tijolo22 3
-nsh> wapi essid wlan0 NuttX 1
-nsh> renew wlan0
-nsh> ifconfig
-wlan0   Link encap:Ethernet HWaddr 34:85:18:42:f9:e4 at RUNNING mtu 1504
-        inet addr:192.168.1.210 DRaddr:192.168.1.1 Mask:255.255.255.0
-
-             IPv4   TCP   UDP  ICMP
-Received     0002  0000  0002  0000
-Dropped      0000  0000  0000  0000
-  IPv4        VHL: 0000   Frg: 0000
-  Checksum   0000  0000  0000  ----
-  TCP         ACK: 0000   SYN: 0000
-              RST: 0000  0000
-  Type       0000  ----  ----  0000
-Sent         0002  0000  0002  0000
-  Rexmit     ----  0000  ----  ----
-```
-
----
-
-![bg right](https://fakeimg.pl/800x600/ffffff/fff/)
-
-###### Real-Time Protocol (RTP) - Receptor
-
 Criando um arquivo *FIFO* para receber os pacotes RTP:
 
 ```shell
@@ -664,7 +664,7 @@ nxplayer> playraw temp 2 16 44100
 
 ###### Real-Time Protocol (RTP) - Receptor
 
-O comando `playraw` do *NxPlayer* encaminha os dados do arquivo diretamente para o codec de áudio. 
+O comando `playraw` do *NxPlayer* encaminha os dados do arquivo diretamente para o codec de áudio.
 <!-- Os argumentos `2`, `16` e `44100` representam, respectivamente, a quantidade de canais (2 canais, estéreo), a quantidade de bits/sample (16) e a taxa de amostragem (44100 Hz). Estes parâmetros são, exatamente, os encontrados em um CD! -->
 
 ---
