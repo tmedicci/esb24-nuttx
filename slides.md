@@ -301,6 +301,12 @@ minicom
 
 #### Primeiros Passos com o *Hello World*
 
+<style scoped>
+pre {
+  font-size: 60%;
+}
+</style>
+
 ```shell
 nsh> help
 help usage:  help [-v] [<cmd>]
@@ -388,7 +394,9 @@ pre {
 
 #### Ainda o *Hello World* - ELF Loader
 
-O programa `Hello World` compilado externamente pode ser executado no firmware com o NuttX. Além de poder ser transferido para uma mídia externa (cartão SD, por exemplo), ele pode ser baixado no NuttX:
+O programa `Hello World` compilado externamente pode ser executado no NuttX, via:
+- Mídia externa (cartão SD, por exemplo)
+- Download
 
 ```shell
 nsh> ls /data
@@ -423,7 +431,7 @@ Ou seja, permite que um programa seja compilado para o formato WebAssembly e, en
 
 #### Ainda o *Hello World* - WebAssembly
 
-##### Compilando o programa *Hello World* para `Wasm`:
+##### Compilando o programa *Hello World* para `Wasm`
 
 ```bash
 export WASI_SDK_PATH=/home/tiago/Downloads/wasi-sdk-22.0-linux/wasi-sdk-22.0
@@ -436,7 +444,7 @@ $ iwasm hello.wasm
 Hello, World!!
 ```
 
-##### Baixando e executando o programa no NuttX:
+##### Baixando e executando o programa no NuttX
 
 ```shell
 nsh> wget /data/hello.wasm http://192.168.1.155:8000/hello.wasm
@@ -448,24 +456,25 @@ Hello, World!!
 
 ## (Um pouco mais de) Por que o NuttX?
 
-- Loadable kernel modules; lightweight, embedded shared libraries;
-- Configurações de Memória: (1) Flat build, (2) Protected build com MPU, e (3) Kernel build com MMU.
-  - *Flat* RTOS ou compilado separadamente, como um kernel seguro monolítico com uma interface de chamadas de sistema (system calls);
-- On-demand paging;
-- Suporte a diversos Sistema de Arquivos (`NXFFS`, `SMART`, `SPIFFS`, `LittleFS`, `ROMFS`, `TMPFS`, etc);
-- USB Host e USB Device;
-- Subsistema de gráficos e áudio;
+- Loadable kernel modules, lightweight, embedded shared libraries
+- Configurações de Memória: (1) Flat build, (2) Protected build com MPU, e (3) Kernel build com MMU
+  - *Flat* RTOS ou compilado separadamente, como um kernel seguro monolítico com uma interface de chamadas de sistema (system calls)
+- On-demand paging
+- Suporte a diversos Sistema de Arquivos
+  - `NXFFS`, `SMART`, `SPIFFS`, `LittleFS`, `ROMFS`, `TMPFS`, etc
+- USB Host e USB Device
+- Subsistema de gráficos e áudio
 
 ---
 
 ## Espressif e o NuttX :computer:
 
 - **Outubro, 2016**
-Primeiro commit pelo próprio Gregory Nutt (criador do NuttX), um mês após o lançamento do ESP32;
+Primeiro commit pelo próprio Gregory Nutt (criador do NuttX), um mês após o lançamento do ESP32
 - **Outubro, 2021**
- Espressif anuncia oficialmente suporte aos OSes NuttX e Zephyr (além do ESP-IDF, que continua sendo o OS oficial da Espressif para seus SOCs);
+ Espressif anuncia oficialmente suporte aos OSes NuttX e Zephyr (além do ESP-IDF, que continua sendo o OS oficial da Espressif para seus SOCs)
 - **Julho, 2024**
-NuttX possui suporte a ESP32, ESP32-S2, ESP32-S3, ESP32-C3, ESP32-C6 e ESP32-H2;
+NuttX possui suporte a ESP32, ESP32-S2, ESP32-S3, ESP32-C3, ESP32-C6 e ESP32-H2
 
 ---
 
@@ -474,8 +483,8 @@ NuttX possui suporte a ESP32, ESP32-S2, ESP32-S3, ESP32-C3, ESP32-C6 e ESP32-H2;
 *"Ah, mas o meu programa é muito específico! Ele lê um dado do sensor ________ pela interface ________ e depois manda para ________ via ________."*
 
 OK, mas alguém *provavelmente*:
-1. Já implementou um driver para ler o sensor em sistema Linux (incluindo o acesso à interface);
-2. Já criou uma aplicação que recebe dados genéricos e os processa (enviando através de alguma interface de rede, por exemplo).
+1. Já implementou um driver para ler o sensor em sistema Linux (incluindo o acesso à interface)
+2. Já criou uma aplicação que recebe dados genéricos e os processa (enviando através de alguma interface de rede, por exemplo)
 
 ---
 
@@ -520,12 +529,14 @@ Artigo no *embarcados.com.br* :books:
 
 ###### Real-Time Protocol (RTP) - Transmissor
 
-- Computador com sistema operacional *Linux*, com o *PulseAudio* (gerenciador de áudio) instalado.
-  - Módulo *RTP Send*: aparece como uma placa de som;
-- Envio de RTP no formato PCM (*Pulse-code modulation*, ou seja, sem qualquer compressão);
-  - 2 canais (estéreo);
-  - 16 bits;
-  - Taxa de amostragem: 44,1KHz;
+- Ambiente
+  - Computador com sistema operacional *Linux*
+  - *PulseAudio* (gerenciador de áudio) instalado
+  - Módulo *RTP Send*
+- Envio de RTP no formato *Pulse-code modulation* (PCM)
+  - 2 canais (estéreo)
+  - 16 bits
+  - Taxa de amostragem: 44,1 kHz
   - **Qualidade de CD!**
 
 ---
@@ -548,13 +559,13 @@ usage: rtpdump [-F hex|ascii|rtcp|short|payload|dump|header] [-f infile] [-o out
 ---
 
 ## Espressif ESP32-S3
-- Wi-Fi (2.4 GHz);
-- Bluetooth Low Energy;
-- Dual high performance Xtensa® 32-bit LX7 CPU cores;
-- Ultra Low Power co-processor;
-- Múltiplos Periféricos;
-- Interface USB OTG;
-- Controlador USB Serial/JTAG;
+- Wi-Fi (2.4 GHz)
+- Bluetooth Low Energy
+- Dual high performance Xtensa® 32-bit LX7 CPU cores
+- Ultra Low Power co-processor
+- Múltiplos Periféricos
+- Interface USB OTG
+- Controlador USB Serial/JTAG
 
 ![bg left:50% height: 95%](./images/esp32s3_block_diagram.png)
 
@@ -562,12 +573,12 @@ usage: rtpdump [-F hex|ascii|rtcp|short|payload|dump|header] [-f infile] [-o out
 
 ## Espressif ESP32-S3-Korvo-2
 
-- Codec de Áudio ES8311:
-  - Interface de controle via I2C;
-  - Interface de dados via I2S;
-- Amplificador de Áudio integrado;
-- Array de Microfones e ADC dedicado;
-- Cartão SD;
+- Codec de Áudio ES8311
+  - Interface de controle: I2C
+  - Interface de dados: I2S
+- Amplificador de Áudio integrado
+- Array de Microfones e ADC dedicado
+- Cartão SD
 
 ![bg left:50% height: 100%](./images/esp32-s3-korvo-2-v3.0.png)
 
@@ -589,7 +600,7 @@ pre {
 
 ###### Real-Time Protocol (RTP) - Receptor
 
-Conectando na rede Wi-Fi:
+Conectando na rede Wi-Fi
 
 ```shell
 nsh> wapi psk wlan0 tijolo22 3
@@ -644,7 +655,8 @@ pre {
 
 ###### Real-Time Protocol (RTP) - Receptor
 
-Neste momento, os pacotes de áudio PCM (recebidos via RTP) estão sendo escritos no arquivo *FIFO* `temp`. Vamos, então, reproduzir (ler), deste arquivo:
+Neste momento, os pacotes de áudio PCM (recebidos via RTP) estão sendo escritos no arquivo *FIFO* `temp`.
+Reproduzindo a partir da leitura do arquivo:
 
 ```shell
 nsh> nxplayer
@@ -654,7 +666,8 @@ h for commands, q to exit
 nxplayer> playraw temp 2 16 44100
 ```
 
-O comando `playraw` do *NxPlayer* encaminha os dados do arquivo diretamente para o codec de áudio. Os argumentos `2`, `16` e `44100` representam, respectivamente, a quantidade de canais (2 canais, estéreo), a quantidade de bits/sample (16) e a taxa de amostragem (44100 Hz). Estes parâmetros são, exatamente, os encontrados em um CD!
+O comando `playraw` do *NxPlayer* encaminha os dados do arquivo diretamente para o codec de áudio. 
+<!-- Os argumentos `2`, `16` e `44100` representam, respectivamente, a quantidade de canais (2 canais, estéreo), a quantidade de bits/sample (16) e a taxa de amostragem (44100 Hz). Estes parâmetros são, exatamente, os encontrados em um CD! -->
 
 ---
 
@@ -666,7 +679,6 @@ O comando `playraw` do *NxPlayer* encaminha os dados do arquivo diretamente para
 #### Tiago Medicci
 
 ![w:25 left](./images/github-mark.png) - [https://github.com/tmedicci](https://github.com/tmedicci)
-![w:25 left](./images/github-mark.png) - [https://github.com/fdcavalcanti](https://github.com/fdcavalcanti)
 ![w:25 left](./images/linkedin-mark.png) - [https://www.linkedin.com/in/tmedicci/](https://www.linkedin.com/in/tmedicci/)
 
 #### Filipe Cavalcanti
