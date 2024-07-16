@@ -41,10 +41,10 @@ O NuttX é um sistema operacional em tempo real (RTOS) que visa fornecer uma pla
 
 #### Software Embarcado
 
-- Bare-metal;
-- Sistemas operacionais:
-  - Sistemas operacionais de tempo real (RTOS);
-  - Linux Embarcado;
+- Bare-metal
+- Sistemas operacionais
+  - Sistemas operacionais de tempo real (RTOS)
+  - Linux Embarcado
 
 ---
 
@@ -90,10 +90,10 @@ section {
 
 ## Por que o NuttX?
 
-- Licença: Apache 2.0;
-- Small footprint:
-  - Suportado do Z80 a RISC-V 64 bits;
-- Ampla comunidade;
+- Licença: Apache 2.0
+- Small footprint
+  - Suportado do Z80 a RISC-V 64 bits
+- Ampla comunidade
 
 **E...** :arrow_heading_down:
 
@@ -206,21 +206,21 @@ int main() {
 
 ## Por que o NuttX?
 
-- Licença: Apache 2.0;
-- Small footprint:
-  - Suportado do Z80 a RISC-V 64 bits;
-- Ampla comunidade;
+- Licença: Apache 2.0
+- Small footprint
+  - Suportado do Z80 a RISC-V 64 bits
+- Ampla comunidade
 
-**E...**:
+**E...**
 
 ---
 
 ## Por que o NuttX?
 
-- Licença: Apache 2.0;
-- Small footprint:
-  - Suportado do Z80 a RISC-V 64 bits;
-- Ampla comunidade;
+- Licença: Apache 2.0
+- Small footprint
+  - Suportado do Z80 a RISC-V 64 bits
+- Ampla comunidade
 - **Compatível com o padrão POSIX!**
 
 ---
