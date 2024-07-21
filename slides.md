@@ -86,6 +86,8 @@ section {
 
 ***Pulse** é uma métrica que avalia atividades no repositório, como pull-requests e issues durante um certo tempo.
 
+<sup>Tabela original por Alin Jerpelea, apresentada em NuttX Workshop 2024 [https://www.youtube.com/watch?v=N0O3dV6fzwI&t=616s]</sup>
+
 ---
 
 ## Por que o NuttX?
